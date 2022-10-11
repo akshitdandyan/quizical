@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quizical</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div
+            class="position-absolute rounded"
+            style="
+                background-color: rgba(159, 159, 159, 0.4);
+                top: 20px;
+                left: 20px;
+            "
+        >
+            <p class="m-0">✨Tips:</p>
+            <ul>
+                <li>Press A, B, C or D to answer the question.</li>
+                <li>
+                    Press left or right arrow to navigate between questions.
+                </li>
+            </ul>
+        </div>
+        <div
+            class="d-flex justify-content-center align-items-center bg-secondary flex-column"
+            style="height: 100vh; width: 100vw"
+        >
+            <h1 class="text-white fs-1">Quizical🎲</h1>
+            <div class="d-flex">
+                <div
+                    id="timer"
+                    style="
+                        border-radius: 50%;
+                        background-color: rgb(155, 155, 155);
+                    "
+                    class="d-flex justify-content-center align-items-center p-2 rounded-full mb-2 shadow"
+                >
+                    30s
+                </div>
+                <div
+                    id="currQue"
+                    style="background-color: rgb(37, 37, 37)"
+                    class="d-flex justify-content-center align-items-center p-2 rounded-full mb-2 shadow text-white rounded ms-2"
+                >
+                    1/15
+                </div>
+            </div>
+
+            <div
+                class="rounded d-flex justify-content-center align-items-center bg-light flex-column p-4 shadow"
+            >
+                <div id="question-indices"></div>
+                <div id="question" class="fs-1 text"></div>
+                <div class="container">
+                    <div class="row">
+                        <div
+                            class="cursor option col rounded p-4 m-4 text-light bg-warning fs-2 text"
+                            id="first-option"
+                        ></div>
+                        <div
+                            class="cursor option col rounded p-4 m-4 text-light bg-warning fs-2 text"
+                            id="second-option"
+                        ></div>
+                    </div>
+                    <div class="row">
+                        <div
+                            class="cursor option col rounded p-4 m-4 text-light bg-warning fs-2 text"
+                            id="third-option"
+                        ></div>
+                        <div
+                            class="cursor option col rounded p-4 m-4 text-light bg-warning fs-2 text"
+                            id="fourth-option"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            id="cover"
+            class="d-flex justify-content-center align-items-center flex-column"
+        >
+            <div class="fs-3 text-center">
+                Welcome to <br />
+                Quizical🎲
+            </div>
+            <button class="btn btn-success mt-4" onclick="startQuiz()">
+                START NOW
+            </button>
+        </div>
+        <div
+            id="result"
+            class="justify-content-center align-items-center flex-column"
+        >
+            <div class="fs-3 text-center">YOUR SCORE📑</div>
+            <div id="correct"></div>
+            <div id="incorrect"></div>
+            <div id="unattempted"></div>
+            <button
+                class="btn btn-success mt-4"
+                onclick="window.location.reload()"
+            >
+                PLAY AGAIN
+            </button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
